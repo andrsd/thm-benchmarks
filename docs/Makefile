@@ -2,6 +2,7 @@ RSTS =
 RSTS += index.rst
 RSTS += compile.rst
 RSTS += benchmarks/00.rst
+RSTS += benchmarks/01.rst
 
 
 all:: html

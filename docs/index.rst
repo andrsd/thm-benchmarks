@@ -6,6 +6,7 @@ Thermal Hydraulics Module is part of Multi-physics Object-Oriented Simulation En
 The following list of benchmarks were performed:
 
 1. :doc:`benchmarks/00`
+2. :doc:`benchmarks/01`
 
 .. toctree::
    :maxdepth: 1
@@ -13,6 +14,7 @@ The following list of benchmarks were performed:
    :caption: Benchmarks
 
    benchmarks/00
+   benchmarks/01
 
 
 .. toctree::
