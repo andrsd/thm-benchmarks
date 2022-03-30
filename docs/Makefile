@@ -1,0 +1,10 @@
+RSTS =
+RSTS += index.rst
+RSTS += compile.rst
+RSTS += benchmarks/00.rst
+
+
+all:: html
+
+html: conf.py $(RSTS)
+	@sphinx-build -b html . html
