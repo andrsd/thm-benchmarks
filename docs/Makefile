@@ -4,6 +4,7 @@ RSTS += compile.rst
 RSTS += benchmarks/00.rst
 RSTS += benchmarks/01.rst
 RSTS += benchmarks/02.rst
+RSTS += benchmarks/03.rst
 
 
 all:: html

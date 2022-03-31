@@ -1,0 +1,6 @@
+Flow channel chain
+==================
+
+**Purpose:** See how well the code scales when using multiple chained channels.
+
+TODO
