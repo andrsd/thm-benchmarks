@@ -14,6 +14,11 @@ How to execute these benchmarks
 
       export BIN=/path/to/thermal_hydraulics-opt
 
+   The benchmarks rely on existence of the `benchmarks/env.mk` file.
+   There are pre-defined ones available in `benchmarks` directory.
+   They are called `env-<name>.mk`.
+   You will need to use one or build your own.
+
 3. Execute benchmark
 
    .. code-block::
