@@ -4,7 +4,7 @@ N_CPUS = 1 2 4 8
 
 # Number of elements used in strong scaling study
 # N_ELEMS_STRONG = 1000000
-N_ELEMS_STRONG = 10000
+N_ELEMS_STRONG = 100000
 
 CSVS_STRONG =
 CSVS_STRONG += benchmark-strong-1-out.csv

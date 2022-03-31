@@ -56,6 +56,8 @@ comps = comps_templ.render(templ_params)
 
 # render the full input file
 petsc_options = {
+    '-pc_factor_mat_solver_type': 'mumps',
+    #'-pc_factor_mat_solver_type': 'superlu_dist',
     '-pc_type': 'lu'
 }
 
