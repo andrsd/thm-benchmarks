@@ -2,6 +2,11 @@ BENCHMARK = 01
 
 include ../env.mk
 
+# Number of elements used in strong scaling study
+N_ELEMS_STRONG = 1000000
+# Number of elements used in weak scaling study
+N_ELEMS_WEAK = 1000 2000 4000 8000
+
 all: run
 
 run: benchmark-strong.csv benchmark-weak.csv

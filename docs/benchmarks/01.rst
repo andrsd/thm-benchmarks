@@ -6,6 +6,11 @@ Purpose
 
 See how well is the rDG scheme scaling up.
 
+Setup
+-----
+
+Single flow channel with inlet and outlet boundary condition
+
 Results
 -------
 
@@ -13,14 +18,11 @@ Results
 
    .. tab:: macOS
 
+      Weak scaling:
+
       .. csv-table:: Collected data for weak scaling
          :file: macos/01/benchmark-weak.csv
          :header-rows: 1
-
-      .. csv-table:: Collected data for strong scaling
-        :file: macos/01/benchmark-strong.csv
-        :header-rows: 1
-
 
       .. plot::
 
@@ -55,6 +57,12 @@ Results
          plt.ylabel("Time [s]")
          plt.xscale('log')
          plt.show()
+
+      Strong scaling:
+
+      .. csv-table:: Collected data for strong scaling
+        :file: macos/01/benchmark-strong.csv
+        :header-rows: 1
 
       .. plot::
 
