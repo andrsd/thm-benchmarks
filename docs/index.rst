@@ -9,6 +9,7 @@ The following list of benchmarks were performed:
 2. :doc:`benchmarks/01`
 3. :doc:`benchmarks/02`
 4. :doc:`benchmarks/03`
+5. :doc:`benchmarks/50`
 
 .. toctree::
    :maxdepth: 1
@@ -19,6 +20,7 @@ The following list of benchmarks were performed:
    benchmarks/01
    benchmarks/02
    benchmarks/03
+   benchmarks/50
 
 
 .. toctree::
