@@ -2,6 +2,9 @@
 
 import jinja2
 import argparse
+import os
+import sys
+import importlib
 
 parser = argparse.ArgumentParser(
     prog = 'gen.py',
@@ -30,6 +33,13 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    '--file',
+    '-f',
+    dest = 'file',
+    help = 'File name additional parameters'
+)
+
+parser.add_argument(
     'params',
     nargs = '*',
     help = 'Parameters passed into the template.'
@@ -41,6 +51,20 @@ args = parser.parse_args()
 templ_params = {
     'nl_abs_tol': 1e-5
 }
+
+if args.file is not None:
+    directory, file_name = os.path.split(args.file)
+    module_name, ext = os.path.splitext(args.file)
+    sys.path.append(directory)
+    temp = importlib.import_module(module_name)
+    sys.path.remove(directory)
+
+    # store variables into template parameters
+    obj_names = [a for a in dir(temp) if not a.startswith('__')]
+    for name in obj_names:
+        attr = getattr(temp, name)
+        if not callable(attr):
+            templ_params[name] = attr
 
 # process parameters passed via command line
 for str_param in vars(args)['params']:
