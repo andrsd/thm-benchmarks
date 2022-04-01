@@ -1,0 +1,7 @@
+benchmark*.i
+*.csv
+*.bak
+plot.png
+*.jou
+*.e
+*.org

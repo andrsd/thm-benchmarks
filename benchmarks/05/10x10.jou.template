@@ -1,0 +1,37 @@
+import acis "10x10.sat" separate_bodies
+
+# top edge 1
+curve 408  interval 22
+curve 408  scheme equal
+mesh curve 408
+
+# top edge 2
+curve 3  interval 22
+curve 3  scheme equal
+mesh curve 3
+
+# top surface
+surface 105  Scheme pave
+mesh surface 105
+
+# height
+curve 4  interval {{ n_axial_elems }}
+curve 4  scheme equal
+
+#
+volume 1  redistribute nodes off
+volume 1  Scheme Sweep  source surface 105    target surface 106   sweep transform least squares
+volume 1  autosmooth target on  fixed imprints off  smart smooth on  tolerance 0.2  nlayers 5
+mesh volume 1
+
+
+# side sets
+Sideset 1 add surface 3 2 1 103
+sideset 1 name 'outside'
+
+Sideset 2 add surface 4 to 102 104 107 to 206
+sideset 2 name 'holes'
+
+export mesh "{{ mesh_file }}" overwrite
+
+quit

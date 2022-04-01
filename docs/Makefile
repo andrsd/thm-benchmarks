@@ -6,6 +6,7 @@ RSTS += benchmarks/01.rst
 RSTS += benchmarks/02.rst
 RSTS += benchmarks/03.rst
 RSTS += benchmarks/04.rst
+RSTS += benchmarks/05.rst
 RSTS += benchmarks/50.rst
 
 

@@ -1,0 +1,2 @@
+- 2x2 configuration is here for debugging
+- 10x10 is for benchmarking
