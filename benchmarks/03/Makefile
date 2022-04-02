@@ -28,7 +28,7 @@ benchmark-strong.i: ../common/gen.py ../common/base.i template.i
 		n_elems=${N_ELEMS_FCH_STRONG} \
 		n_loops=${N_LOOPS} \
 		n_channels=${N_CHANNELS} \
-		nl_abs_tol=1e-5 > $@
+		nl_abs_tol=1e-4 > $@
 
 
 # weak scaling
@@ -44,7 +44,7 @@ benchmark-weak-%.i: ../common/gen.py ../common/base.i template.i
 		n_elems=$(word $*,$(N_ELEMS_FCH_WEAK)) \
 		n_loops=${N_LOOPS} \
 		n_channels=${N_CHANNELS} \
-		nl_abs_tol=1e-5 > $@
+		nl_abs_tol=1e-4 > $@
 
 # clean
 

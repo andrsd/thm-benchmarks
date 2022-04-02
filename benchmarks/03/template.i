@@ -43,18 +43,14 @@ press = 1e5
     []
     {% if i < n_chs - 1 %}
     [jct-{{ j }}-{{ i }}]
-      type = VolumeJunction1Phase
+      type = JunctionOneToOne1Phase
       connections = 'channel-{{j}}-{{i}}:out channel-{{j}}-{{i + 1}}:in'
-      position = '{{ i+1 }} {{ j }} 0'
-      volume = {{ vol }}
     []
     {% endif %}
     {% endfor %}
     [jct-{{ j }}-{{ n_chs-1 }}]
-      type = VolumeJunction1Phase
+      type = JunctionOneToOne1Phase
       connections = 'channel-{{j}}-{{n_chs-1}}:out channel-{{j}}-0:in'
-      position = '{{ n_chs }} {{ j }} 0'
-      volume = {{ vol }}
     []
   {% endfor %}
 []
