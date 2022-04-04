@@ -52,6 +52,6 @@
   [out]
     type = CSV
     execute_on = final
-    show = 'jac_time res_time solve_time'
+    show = 'jac_time res_time solve_time num_elems'
   []
 []
