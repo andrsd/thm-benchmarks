@@ -14,3 +14,6 @@ all:: html
 
 html: conf.py $(RSTS)
 	@sphinx-build -b html . html
+
+clean:
+	@rm -rf html
