@@ -18,7 +18,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 # this needs to match the N_CPUS variable of the Makefile that produced the CSV
-N_CPUS = [1, 2, 4, 8]
+N_CPUS = [1, 2, 4, 8, 16, 32, 64, 128, 256]
 
 all_file_names = vars(args)['files']
 
