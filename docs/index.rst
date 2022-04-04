@@ -16,6 +16,13 @@ The following list of benchmarks were performed:
 .. toctree::
    :maxdepth: 1
    :hidden:
+   :caption: Procedure
+
+   compile.rst
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
    :caption: Benchmarks
 
    benchmarks/00
@@ -26,13 +33,6 @@ The following list of benchmarks were performed:
    benchmarks/05
    benchmarks/50
 
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Procedure
-
-   compile.rst
 
 
 Test environment

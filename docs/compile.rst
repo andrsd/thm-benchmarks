@@ -10,6 +10,8 @@ How to execute these benchmarks
 
 2. Setup environment
 
+   Either have `/path/to/moose/modules/thermal_hydraulics` in your `PATH` or export `BIN` variable:
+
    .. code-block::
 
       export BIN=/path/to/thermal_hydraulics-opt
