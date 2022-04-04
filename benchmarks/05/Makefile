@@ -7,8 +7,8 @@ CONF_FILE=${CONF}-conf.py
 # Number of elements used in strong scaling study
 N_ELEMS_FCH_STRONG = 1000
 # Number of elements used in weak scaling study
-N_ELEMS_FCH_WEAK = 100 200 400 800
-N_SM_ELEMS_WEAK = 1 2 4 8
+N_ELEMS_FCH_WEAK = 100 200 400 800 1600 3200 6400 12800 25600
+N_SM_ELEMS_WEAK = 1 2 4 8 16 32 64 128 256
 
 all: run
 
@@ -31,7 +31,7 @@ benchmark-strong.csv: ${CSVS_STRONG}
 	@python ../common/join-parallel.py $? > $@
 
 benchmark-strong-%-out.csv: benchmark-strong.i
-	@mpirun -np $(word $*,$(N_CPUS)) ${BIN} -i $< Outputs/out/file_base=benchmark-strong-$*-out
+	@mpirun -np $(word $*,$(N_CPUS)) ${MPI_FLAGS} ${BIN} -i $< Outputs/out/file_base=benchmark-strong-$*-out
 
 benchmark-strong.i: ../common/gen.py ../common/base.i template.i ${CONF_FILE} block.e
 	@python ../common/gen.py -l .. -b common/base.i -t ${BENCHMARK}/template.i -f ${CONF_FILE} \
@@ -53,7 +53,7 @@ benchmark-weak.csv: ${CSVS_WEAK}
 	@python ../common/join-parallel.py $? > $@
 
 benchmark-weak-%-out.csv: benchmark-weak-%.i
-	@mpirun -np $(word $*,$(N_CPUS)) ${BIN} -i $< Outputs/out/file_base=benchmark-weak-$*-out
+	@mpirun -np $(word $*,$(N_CPUS)) ${MPI_FLAGS} ${BIN} -i $< Outputs/out/file_base=benchmark-weak-$*-out
 
 benchmark-weak-%.i: ../common/gen.py ../common/base.i template.i block-%.e ${CONF_FILE}
 	@python ../common/gen.py -l .. -b common/base.i -t ${BENCHMARK}/template.i -f ${CONF_FILE} \
