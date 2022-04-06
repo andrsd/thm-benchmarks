@@ -47,6 +47,7 @@ benchmark-weak-%.i: ../common/gen.py ../common/base.i template.i
 		nl_abs_tol=1e-4 > $@
 
 # clean
+.PHONY: clean
 
 clean:
 	@rm -f benchmark-strong.i

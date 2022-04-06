@@ -33,6 +33,8 @@ benchmark.csv: ${CSVS}
 benchmark_%_out.csv: benchmark_%.i
 	@${BIN} -i $<
 
+.PHONY: clean
+
 clean:
 	@rm -f benchmark_*_out.csv
 	@rm -f benchmark.csv

@@ -17,5 +17,7 @@ all:: html
 html: conf.py $(RSTS)
 	@sphinx-build -b html . html
 
+.PHONY: clean
+
 clean:
 	@rm -rf html

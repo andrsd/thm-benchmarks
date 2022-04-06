@@ -13,6 +13,8 @@ benchmark.i: ../common/gen.py ../common/base.i template.i
 benchmark_out.csv: benchmark.i
 	@${BIN} -i $<
 
+.PHONY: clean
+
 clean:
 	@rm -f benchmark_out.csv
 	@rm -f benchmark.i

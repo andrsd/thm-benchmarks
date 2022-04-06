@@ -35,6 +35,7 @@ benchmark-weak-%.i: ../common/gen.py ../common/base.i template.i
 	@python ../common/gen.py -l .. -b common/base.i -t ${BENCHMARK}/template.i n_elems=$(word $*,$(N_ELEMS_WEAK)) nl_abs_tol=1e-5 > $@
 
 # clean
+.PHONY: clean
 
 clean:
 	@rm -f benchmark-strong.i
