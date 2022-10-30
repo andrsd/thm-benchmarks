@@ -1,0 +1,101 @@
+Single threaded execution
+=========================
+
+Purpose
+-------
+
+Get insight into single threaded execution.
+
+Setup
+-----
+
+Single flow channel with inlet and outlet boundary condition
+
+
+Results
+-------
+
+.. tabs::
+
+   .. tab:: macOS
+
+      .. csv-table:: Collected data
+         :file: macos/00/benchmark.csv
+         :header-rows: 1
+
+      .. plot::
+
+         import csv
+
+         num_elems = []
+         residual_time = []
+         jacobian_time = []
+         solve_time = []
+
+         with open('macos/00/benchmark.csv') as f:
+             reader = csv.DictReader(f)
+             for row in reader:
+                 num_elems.append(float(row['num_elems']))
+                 jacobian_time.append(float(row['jac_time']))
+                 residual_time.append(float(row['res_time']))
+                 solve_time.append(float(row['solve_time']))
+
+         plt.title("Problem size vs time")
+         plt.scatter(num_elems, solve_time, marker='.', label='solve')
+         plt.scatter(num_elems, residual_time, marker='^', label='residual')
+         plt.scatter(num_elems, jacobian_time, marker='s', label='jacobian')
+         plt.legend()
+         plt.xlabel("Number of elements")
+         plt.ylabel("Time [s]")
+         plt.xscale('log')
+         plt.show()
+
+   .. tab:: lemhi
+
+      .. csv-table:: Collected data
+         :file: lemhi/00/benchmark.csv
+         :header-rows: 1
+
+      .. plot::
+
+         import csv
+
+         num_elems = []
+         residual_time = []
+         jacobian_time = []
+         solve_time = []
+
+         with open('lemhi/00/benchmark.csv') as f:
+             reader = csv.DictReader(f)
+             for row in reader:
+                 num_elems.append(float(row['num_elems']))
+                 jacobian_time.append(float(row['jac_time']))
+                 residual_time.append(float(row['res_time']))
+                 solve_time.append(float(row['solve_time']))
+
+         plt.title("Problem size vs time")
+         plt.scatter(num_elems, solve_time, marker='.', label='solve')
+         plt.scatter(num_elems, residual_time, marker='^', label='residual')
+         plt.scatter(num_elems, jacobian_time, marker='s', label='jacobian')
+         plt.legend()
+         plt.xlabel("Number of elements")
+         plt.ylabel("Time [s]")
+         plt.xscale('log')
+         plt.show()
+
+
+Conclusion
+----------
+
+The single threaded execution scales well up to 100,000 elements.
+This is very good for coarse grid solver where number of elements per flow channel does not usually grow above 100 elements.
+
+With the number of degrees of freedom larger than 100,000, the execution time grows more than quadratically.
+This is expected behavior, since direct solvers do not scale up very well.
+This shows that problems with large degrees of freedom should not be solved in a single-threaded environment.
+
+*Suggestion for future*
+
+Develop a scalable solver for conjugate heat transfer problems.
+Possibly split individual solves: heat conduction can use multi-grid which scales up well, the flow part might use an explicit solve (when an efficient one is available in MOOSE).
+This approach will require huge internal changes in the code.

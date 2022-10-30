@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Many individual flow channels &mdash; Thermal Hydraulics Module Benchmarks  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Flow channel loops" href="03.html" />
+    <link rel="prev" title="Single flow channel with many elements" href="01.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Thermal Hydraulics Module Benchmarks
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Procedure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../compile.html">How to execute these benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../envs.html">Test environments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Benchmarks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="00.html">Single threaded execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">Single flow channel with many elements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Many individual flow channels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">Flow channel loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">Heat exchanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">Many channels via 3D heat structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">Many channels with heat structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50.html">Memory usage</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Thermal Hydraulics Module Benchmarks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Many individual flow channels</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="many-individual-flow-channels">
+<h1>Many individual flow channels<a class="headerlink" href="#many-individual-flow-channels" title="Permalink to this headline"></a></h1>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline"></a></h2>
+<p>See how well the code scales when using multiple parallel channels.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>1,000 identical parallel channels (disconnected)</p></li>
+</ul>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline"></a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">macOS</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Weak scaling:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Collected data for weak scaling</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>n_cpus</p></th>
+<th class="head"><p>jac_time</p></th>
+<th class="head"><p>res_time</p></th>
+<th class="head"><p>solve_time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>43.646824785</p></td>
+<td><p>64.624573344</p></td>
+<td><p>120.261816134</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>40.353569847</p></td>
+<td><p>57.657369992</p></td>
+<td><p>115.921265919</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>46.717396972</p></td>
+<td><p>58.864115007</p></td>
+<td><p>130.761577293</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>69.120194819</p></td>
+<td><p>77.010327468</p></td>
+<td><p>188.60727667</p></td>
+</tr>
+</tbody>
+</table>
+<p>(<a class="reference external" href="../benchmarks/02-1.py">Source code</a>, <a class="reference external" href="../benchmarks/02-1.png">png</a>, <a class="reference external" href="../benchmarks/02-1.hires.png">hires.png</a>, <a class="reference external" href="../benchmarks/02-1.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../_images/02-1.png" class="plot-directive" src="../_images/02-1.png" />
+</figure>
+<p>Strong scaling:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Collected data for strong scaling</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>n_cpus</p></th>
+<th class="head"><p>jac_time</p></th>
+<th class="head"><p>res_time</p></th>
+<th class="head"><p>solve_time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>153.281798505</p></td>
+<td><p>214.15601463</p></td>
+<td><p>526.229136939</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>77.865969061</p></td>
+<td><p>110.145851451</p></td>
+<td><p>281.067685138</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>47.251544487</p></td>
+<td><p>64.669498114</p></td>
+<td><p>163.857707035</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>36.24474462</p></td>
+<td><p>47.004779021</p></td>
+<td><p>118.661076868</p></td>
+</tr>
+</tbody>
+</table>
+<p>(<a class="reference external" href="../benchmarks/02-2.py">Source code</a>, <a class="reference external" href="../benchmarks/02-2.png">png</a>, <a class="reference external" href="../benchmarks/02-2.hires.png">hires.png</a>, <a class="reference external" href="../benchmarks/02-2.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../_images/02-2.png" class="plot-directive" src="../_images/02-2.png" />
+</figure>
+</div></div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01.html" class="btn btn-neutral float-left" title="Single flow channel with many elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03.html" class="btn btn-neutral float-right" title="Flow channel loops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, David Andrs.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

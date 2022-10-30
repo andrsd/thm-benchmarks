@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single threaded execution &mdash; Thermal Hydraulics Module Benchmarks  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Single flow channel with many elements" href="01.html" />
+    <link rel="prev" title="Test environments" href="../envs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Thermal Hydraulics Module Benchmarks
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Procedure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../compile.html">How to execute these benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../envs.html">Test environments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Benchmarks</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Single threaded execution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">Single flow channel with many elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">Many individual flow channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">Flow channel loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">Heat exchanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">Many channels via 3D heat structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">Many channels with heat structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50.html">Memory usage</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Thermal Hydraulics Module Benchmarks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Single threaded execution</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="single-threaded-execution">
+<h1>Single threaded execution<a class="headerlink" href="#single-threaded-execution" title="Permalink to this headline"></a></h1>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline"></a></h2>
+<p>Get insight into single threaded execution.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<p>Single flow channel with inlet and outlet boundary condition</p>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline"></a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">lemhi</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Collected data</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>num_elems</p></th>
+<th class="head"><p>jac_time</p></th>
+<th class="head"><p>res_time</p></th>
+<th class="head"><p>solve_time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1000</p></td>
+<td><p>0.13218408</p></td>
+<td><p>0.173935426</p></td>
+<td><p>0.309979811</p></td>
+</tr>
+<tr class="row-odd"><td><p>2000</p></td>
+<td><p>0.257741945</p></td>
+<td><p>0.361889843</p></td>
+<td><p>0.626494635</p></td>
+</tr>
+<tr class="row-even"><td><p>5000</p></td>
+<td><p>0.947959351</p></td>
+<td><p>1.084601816</p></td>
+<td><p>2.049077994</p></td>
+</tr>
+<tr class="row-odd"><td><p>10000</p></td>
+<td><p>1.911830171</p></td>
+<td><p>2.166997405</p></td>
+<td><p>4.109438179</p></td>
+</tr>
+<tr class="row-even"><td><p>20000</p></td>
+<td><p>3.843163275</p></td>
+<td><p>4.351226214</p></td>
+<td><p>8.259251076</p></td>
+</tr>
+<tr class="row-odd"><td><p>50000</p></td>
+<td><p>9.660643421</p></td>
+<td><p>10.893943586</p></td>
+<td><p>20.709999663</p></td>
+</tr>
+<tr class="row-even"><td><p>100000</p></td>
+<td><p>19.127986528</p></td>
+<td><p>21.650638609</p></td>
+<td><p>41.116201018</p></td>
+</tr>
+<tr class="row-odd"><td><p>200000</p></td>
+<td><p>51.979245743</p></td>
+<td><p>52.913384949</p></td>
+<td><p>105.716581996</p></td>
+</tr>
+<tr class="row-even"><td><p>500000</p></td>
+<td><p>130.702344051</p></td>
+<td><p>133.402561011</p></td>
+<td><p>266.167972955</p></td>
+</tr>
+<tr class="row-odd"><td><p>1000000</p></td>
+<td><p>331.005546606</p></td>
+<td><p>321.568427025</p></td>
+<td><p>657.449938925</p></td>
+</tr>
+</tbody>
+</table>
+<p>(<a class="reference external" href="../benchmarks/00-1.py">Source code</a>, <a class="reference external" href="../benchmarks/00-1.png">png</a>, <a class="reference external" href="../benchmarks/00-1.hires.png">hires.png</a>, <a class="reference external" href="../benchmarks/00-1.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../_images/00-1.png" class="plot-directive" src="../_images/00-1.png" />
+</figure>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Collected data</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>num_elems</p></th>
+<th class="head"><p>jac_time</p></th>
+<th class="head"><p>res_time</p></th>
+<th class="head"><p>solve_time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1000</p></td>
+<td><p>0.110604737</p></td>
+<td><p>0.16275902</p></td>
+<td><p>0.300613205</p></td>
+</tr>
+<tr class="row-odd"><td><p>2000</p></td>
+<td><p>0.214192176</p></td>
+<td><p>0.314641925</p></td>
+<td><p>0.579189328</p></td>
+</tr>
+<tr class="row-even"><td><p>5000</p></td>
+<td><p>0.795711634</p></td>
+<td><p>0.981649297</p></td>
+<td><p>1.951094493</p></td>
+</tr>
+<tr class="row-odd"><td><p>10000</p></td>
+<td><p>1.611290368</p></td>
+<td><p>1.974189131</p></td>
+<td><p>3.945516931</p></td>
+</tr>
+<tr class="row-even"><td><p>20000</p></td>
+<td><p>3.220176864</p></td>
+<td><p>3.937434005</p></td>
+<td><p>7.871497906</p></td>
+</tr>
+<tr class="row-odd"><td><p>50000</p></td>
+<td><p>8.054177533</p></td>
+<td><p>10.000389624</p></td>
+<td><p>19.854248464</p></td>
+</tr>
+<tr class="row-even"><td><p>100000</p></td>
+<td><p>16.093023205</p></td>
+<td><p>19.814048649</p></td>
+<td><p>39.546570165</p></td>
+</tr>
+<tr class="row-odd"><td><p>200000</p></td>
+<td><p>43.096265161</p></td>
+<td><p>47.948247814</p></td>
+<td><p>100.605056416</p></td>
+</tr>
+<tr class="row-even"><td><p>500000</p></td>
+<td><p>107.995911734</p></td>
+<td><p>118.865583327</p></td>
+<td><p>251.107287094</p></td>
+</tr>
+<tr class="row-odd"><td><p>1000000</p></td>
+<td><p>271.146861407</p></td>
+<td><p>282.904665636</p></td>
+<td><p>614.699674157</p></td>
+</tr>
+</tbody>
+</table>
+<p>(<a class="reference external" href="../benchmarks/00-2.py">Source code</a>, <a class="reference external" href="../benchmarks/00-2.png">png</a>, <a class="reference external" href="../benchmarks/00-2.hires.png">hires.png</a>, <a class="reference external" href="../benchmarks/00-2.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../_images/00-2.png" class="plot-directive" src="../_images/00-2.png" />
+</figure>
+</div></div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"></a></h2>
+<p>The single threaded execution scales well up to 100,000 elements.
+This is very good for coarse grid solver where number of elements per flow channel does not usually grow above 100 elements.</p>
+<p>With the number of degrees of freedom larger than 100,000, the execution time grows more than quadratically.
+This is expected behavior, since direct solvers do not scale up very well.
+This shows that problems with large degrees of freedom should not be solved in a single-threaded environment.</p>
+<p><em>Suggestion for future</em></p>
+<p>Develop a scalable solver for conjugate heat transfer problems.
+Possibly split individual solves: heat conduction can use multi-grid which scales up well, the flow part might use an explicit solve (when an efficient one is available in MOOSE).
+This approach will require huge internal changes in the code.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../envs.html" class="btn btn-neutral float-left" title="Test environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01.html" class="btn btn-neutral float-right" title="Single flow channel with many elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, David Andrs.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
