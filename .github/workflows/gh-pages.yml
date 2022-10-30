@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update -qq
-          sudo apt install python3-sphinx python3-sphinx-rtd-theme python3-sphinx-tabs matplotlib
+          sudo apt install python3-sphinx python3-sphinx-rtd-theme python3-sphinx-tabs python3-matplotlib
       - name: Build doco
         run: |
           make -C ${{ github.workspace }}/docs
